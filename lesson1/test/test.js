@@ -39,7 +39,7 @@ describe("Palindrome function unit test suite negative scenarios", function () {
         expect(isPalindrome(undefined), "empty input undefined").to.equal(false);
     }),
     it("It should work with empty input '  '", async function () {
-        expect(isPalindrome("  "), "empty input ' '").to.equal(false);
+        expect(isPalindrome("  "), "empty input '  '").to.equal(false);
     }),
     it("It should work with empty input ,,", async function () {
         expect(isPalindrome(",,,"), "empty input ',,'").to.equal(false);
