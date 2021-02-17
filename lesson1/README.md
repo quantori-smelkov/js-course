@@ -5,5 +5,6 @@
 1. Create a JS implementation of quick sort algorithm*.
 
 ## Run it
-npm i
-npm run test
+
+1. npm i
+1. npm run test
