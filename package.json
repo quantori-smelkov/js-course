@@ -1,0 +1,6 @@
+{
+  "name": "js-course",
+  "scripts": {
+    "test": "echo \"Hello\" && exit 0"
+  }
+}
