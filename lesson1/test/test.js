@@ -20,8 +20,11 @@ describe("Palindrome function unit test suite positive scenarios", function () {
     it("It should work with expression", async function () {
         expect(isPalindrome("Eva, can I see bees in a cave?"), "expressions mixedcase").to.equal(true);
     }),
-    it("Simple scenario with numbers", async function () {
+    it("Simple scenario with number passed as string", async function () {
         expect(isPalindrome("8998"), "no punctuations number").to.equal(true);
+    }),
+    it("Simple scenario with number passed as number", async function () {
+        expect(isPalindrome(8998), "no punctuations number").to.equal(true);
     }),
     it("Complex scenario with numbers", async function () {
         expect(isPalindrome("8 9,98"), "punctuations number").to.equal(true);
@@ -56,11 +59,17 @@ describe("Palindrome function unit test suite negative scenarios", function () {
     it("It should work with expression", async function () {
         expect(isPalindrome("Eva, can I see bees in a cave, please?"), "expressions mixedcase").to.equal(false);
     }),
-    it("Simple scenario with numbers", async function () {
-        expect(isPalindrome("89987"), "no punctuations number").to.equal(false);
+    it("Simple scenario with number passed as string", async function () {
+        expect(isPalindrome("89987"), "no punctuations number passed as string").to.equal(false);
+    }),
+    it("Simple scenario with number passed as number", async function () {
+        expect(isPalindrome("89987"), "no punctuations number passed as number").to.equal(false);
+    }),
+    it("Complex scenario with numbers passed as string", async function () {
+        expect(isPalindrome("8 9,983"), "punctuations number passed as string").to.equal(false);
     }),
     it("Complex scenario with numbers", async function () {
-        expect(isPalindrome("8 9,983"), "punctuations number").to.equal(false);
+        expect(isPalindrome(9.98_3), "punctuations number passed as number").to.equal(false);
     })
 })
 
