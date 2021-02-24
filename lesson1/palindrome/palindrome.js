@@ -1,3 +1,12 @@
+/**
+ * @param {String} input
+ * @returns {boolean}
+ */
+/**
+ * Punctuation will be removed
+ * Numbers and latin alphabet are tested to work
+ */
+
 function isPalindrome(input) {
   // define regular expression to filter all non-letters and numbers
   let regExp = /[^A-Za-z0-9]/g;
