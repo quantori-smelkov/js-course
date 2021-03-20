@@ -8,7 +8,7 @@ function* generator() {
     }
 }
 
-Array.prototype.sum = function(){
+Array.prototype.sum = function() {
     let sum = 0;
     for (let i = 0; i < this.length; i++){
         sum += Number(this[i])
@@ -42,5 +42,5 @@ if (car1Array.sum() > car2Array.sum())
     console.log("Победила первая машина со скоростью: " + car1Array.sum(), "скорость второй машины: " + car2Array.sum())
 if (car2Array.sum() > car1Array.sum())
     console.log("Победила вторая машина со скоростью: " + car2Array.sum(), "скорость первой машины: " + car1Array.sum())
-if (car2Array.sum() == car1Array.sum())
+if (car2Array.sum() === car1Array.sum())
     console.log("Ничья, скорость машин: " + car1Array.sum())
