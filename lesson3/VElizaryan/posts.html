@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Posts: <output id="result"></output></p>
+<button onclick="getPost()">Get post</button>
+<table id = table>
+    <tr>
+        <th>ID</th>
+        <th>UserID</th>
+        <th>Title</th>
+        <th>Body</th>
+    </tr>
+</table>
+
+<script>
+	let index = 1;
+    let xhr = new XMLHttpRequest();
+	function getPost() {
+        xhr.open('GET', `https://jsonplaceholder.typicode.com/posts/${index}`, false);
+        xhr.send();
+
+        if (xhr.status !== 200) {
+            console.log( xhr.status + ': ' + xhr.statusText );
+        }
+        else {
+            console.log(xhr.responseText);
+            let postObject = JSON.parse(xhr.responseText )
+            let tbody = document.getElementById('table');
+
+            let row = document.createElement("TR");
+            tbody.appendChild(row);
+
+            let td1 = document.createElement("TD");
+            let td2 = document.createElement("TD");
+            let td3 = document.createElement("TD");
+            let td4 = document.createElement("TD");
+            row.appendChild(td1);
+            row.appendChild(td2);
+            row.appendChild(td3);
+            row.appendChild(td4);
+            td1.innerHTML = postObject.id;
+            td2.innerHTML = postObject.userId;
+            td3.innerHTML = postObject.title;
+            td4.innerHTML = postObject.body;
+
+            index++;
+        }
+	}
+</script>
+</body>
+</html>
