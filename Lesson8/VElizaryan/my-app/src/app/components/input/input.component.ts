@@ -7,7 +7,7 @@ import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 })
 export class InputComponent implements OnInit {
   constructor() { }
-  login: string;
+  example: string = 'new to-do item';
 
   @Output() newItemEvent = new EventEmitter<string>();
 

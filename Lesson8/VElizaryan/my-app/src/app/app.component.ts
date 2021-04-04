@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ListComponent } from '../app/components/list/list.component';
-import {Item} from "./interfaces/item";
+import {Item} from './interfaces/item';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +15,8 @@ export class AppComponent {
   ];
 
   addItem(newItem: string) {
-    this.items.unshift({ title: newItem, done: false });
+    if (newItem !== null && newItem !== '') {
+      this.items.unshift({ title: newItem, done: false });
+    }
   }
 }
