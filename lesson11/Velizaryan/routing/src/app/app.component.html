@@ -1,0 +1,92 @@
+<h1 class="title">Routing</h1>
+
+<section>
+  <nav>
+    <ul class="menuItems">
+      <li>
+        <a routerLink=""
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact: true}"
+           data-item="Home">
+          Home</a>
+      </li>
+<!--      <li>-->
+<!--        <a-->
+<!--          routerLink="/about"-->
+<!--          routerLinkActive="active"-->
+<!--          [routerLinkActiveOptions]="{exact: true}"-->
+<!--          data-item="About">-->
+<!--          About</a>-->
+<!--      </li>-->
+<!--      <li>-->
+<!--        <a routerLink="/qweqwe"-->
+<!--           routerLinkActive="active"-->
+<!--           [routerLinkActiveOptions]="{exact: true}"-->
+<!--           data-item="404">-->
+<!--          404</a>-->
+<!--      </li>-->
+      <li>
+        <a routerLink="/items"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact: true}"
+           data-item="items">
+          items</a>
+      </li>
+<!--      <li>-->
+<!--        <a routerLink="/items/5"-->
+<!--           routerLinkActive="active"-->
+<!--           [routerLinkActiveOptions]="{exact: true}"-->
+<!--           data-item="Item 5">-->
+<!--          Item 5</a>-->
+<!--      </li>-->
+      <li>
+        <a [routerLink]="['items', 6]"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact: true}"
+           [queryParams]="{ product: 'phone', price: 200 }"
+           data-item="Item 6">
+          Item 6</a>
+      </li>
+      <li>
+        <a [routerLink]="['items', 6, 'detail']"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact: true}"
+           data-item="Item 6 Detail">
+          Item 6 Detail</a>
+      </li>
+<!--      <li>-->
+<!--        <p (click)="goHome()">Go Home</p>-->
+<!--      </li>-->
+
+<!--      <li>-->
+<!--        <a routerLink="/strict"-->
+<!--           routerLinkActive="active"-->
+<!--           [routerLinkActiveOptions]="{exact: true}"-->
+<!--           data-item="Strict">-->
+<!--          Strict</a>-->
+<!--      </li>-->
+
+      <li>
+        <a routerLink="/admin/posts"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact: true}"
+           data-item="Posts">
+          Posts</a>
+      </li>
+
+      <li>
+        <a routerLink="/admin/posts/5"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact: true}"
+           data-item="posts 5">
+          Posts 5</a>
+      </li>
+    </ul>
+  </nav>
+</section>
+
+<section>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</section>
