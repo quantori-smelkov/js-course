@@ -7,14 +7,14 @@ const app = express(),
 // place holder for the data
 const tasks =
   {
-    text: 'Hello word',
+    message: 'ok',
   };
 
 app.use(bodyParser.json());
 
 app.get('/api/sign-up', (req, res) => {
-  console.log('api/todos called!')
-  res.json(tasks);
+  console.log('api/sign-up called!')
+  res.status(200).send(tasks);
 });
 
 app.get('/', (req,res) => {
