@@ -5,4 +5,5 @@ export interface Post {
   author: string;
   dateCreateAt?: string;
   tags: string | string[];
+  categoryId?: string;
 }

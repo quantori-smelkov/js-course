@@ -7,6 +7,7 @@
       <mat-chip class="example-box" cdkDrag *ngFor="let tag of post.tags">
         {{ tag }}
       </mat-chip>
-    </mat-chip-list>
+    </mat-chip-list><br>
+    <p class="card-text">Category: {{ post.categoryId }}</p>
   </div>
 </div>

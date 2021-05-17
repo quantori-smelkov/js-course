@@ -2,6 +2,7 @@
 
 <div class="panel">
   <h1>Posts</h1>
+  <button mat-button [routerLink]="['/admin','categories']">Categories</button>
   <button mat-raised-button color="primary" [routerLink]="['/admin', 'posts', 'create']">Create</button>
 </div>
 
@@ -35,6 +36,11 @@
   <ng-container matColumnDef="dateCreateAt">
     <th mat-header-cell *matHeaderCellDef> date create </th>
     <td mat-cell *matCellDef="let element"> {{element.dateCreateAt}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="categoryId">
+    <th mat-header-cell *matHeaderCellDef> categoryId </th>
+    <td mat-cell *matCellDef="let element"> {{element.categoryId}} </td>
   </ng-container>
 
   <ng-container matColumnDef="actions">

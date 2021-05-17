@@ -28,6 +28,16 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field><br>
 
+      <mat-form-field appearance="Category">
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="categoryId" required>
+          <mat-option *ngFor="let category of categories" [value]="category.id">
+            {{category.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field><br>
+
+
       <button mat-raised-button color="primary" type="submit"> {{post? 'Update': 'Create'}}</button>
     </form>
   </mat-card-content>

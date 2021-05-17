@@ -1,5 +1,5 @@
-import { PostsService } from 'src/app/core/services/posts.service';
-import { Post } from '../../core/interfaces/post';
+import { CategoriesService } from 'src/app/core/services/categories.service';
+import { Category } from '../../core/interfaces/category';
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -10,20 +10,20 @@ import { StoreService } from 'src/app/core/services/store.service';
 @Injectable({
   providedIn: 'root'
 })
-export class PostResolver implements Resolve<Post> {
+export class CategoryResolver implements Resolve<Category> {
   constructor(
     private readonly store: StoreService,
-    private readonly postService: PostsService
+    private readonly categoriesService: CategoriesService
   ) {}
 
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<any>|Promise<any>|any {
-    this.postService
+    this.categoriesService
       .findOne(route.params.id)
       .pipe(
-        tap((post: Post) => this.store.post$.next(post))
+        tap((category: Category) => this.store.category$.next(category))
       )
       .subscribe();
 

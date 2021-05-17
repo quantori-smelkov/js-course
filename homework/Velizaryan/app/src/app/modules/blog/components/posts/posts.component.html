@@ -16,6 +16,8 @@
         </mat-chip>
       </mat-chip-list>
       <br>
+
+      <p class="card-text">Category: {{ post.categoryId }}</p><br>
       <a [routerLink]="['/blog', 'posts', post.id]" class="btn btn-primary">See more</a>
     </div>
   </div></ng-container>

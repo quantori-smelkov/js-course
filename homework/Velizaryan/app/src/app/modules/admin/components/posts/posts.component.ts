@@ -10,10 +10,10 @@ import {Router} from '@angular/router';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'title', 'author', 'tags', 'dateCreateAt', 'actions'];
+  displayedColumns: string[] = ['id', 'title', 'author', 'tags', 'dateCreateAt', 'categoryId', 'actions'];
 
   public page: number;
-  public pageSize = 15;
+  public pageSize = 10;
   public collectionSize: number;
   dataSource: Post [] = [];
   dataSourcePage: Post [] = [];
@@ -39,13 +39,18 @@ export class PostsComponent implements OnInit {
 
   remove(id: string): void {
     this.postsService.remove(id).pipe(
-      tap(() => this.dataSource = this.dataSource.filter((post: Post) => post.id !== id))
+      tap(() => {
+          this.dataSource = this.dataSource.filter((post: Post, i) => post.id !== id);
+          this.dataSourcePage = this.dataSource.filter((post, i) => i < this.pageSize * this.page && i >=
+            this.pageSize * (this.page - 1));
+        }
+      )
     ).subscribe();
   }
 
   onPageChanged(pageNumber: number): void  {
     console.log( pageNumber);
-    console.log(this.pageSize);
+    this.page = pageNumber;
     this.dataSourcePage = this.dataSource.filter((post, i) => i < this.pageSize * pageNumber && i >=
       this.pageSize * (pageNumber - 1));
   }
